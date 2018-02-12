@@ -1,0 +1,219 @@
+fileFormatVersion: 2
+guid: 96e9c21ecd4282040a5161a5c64a4285
+timeCreated: 1513763495
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Gyro_Range
+    100004: Position
+    100006: Range0
+    100008: Range1
+    100010: Range10
+    100012: Range2
+    100014: Range3
+    100016: Range4
+    100018: Range5
+    100020: Range6
+    100022: Range7
+    100024: Range8
+    100026: Range9
+    400000: //RootNode
+    400002: Gyro_Range
+    400004: Position
+    400006: Range0
+    400008: Range1
+    400010: Range10
+    400012: Range2
+    400014: Range3
+    400016: Range4
+    400018: Range5
+    400020: Range6
+    400022: Range7
+    400024: Range8
+    400026: Range9
+    2300000: Gyro_Range
+    2300002: Position
+    2300004: Range0
+    2300006: Range1
+    2300008: Range10
+    2300010: Range2
+    2300012: Range3
+    2300014: Range4
+    2300016: Range5
+    2300018: Range6
+    2300020: Range7
+    2300022: Range8
+    2300024: Range9
+    3300000: Gyro_Range
+    3300002: Position
+    3300004: Range0
+    3300006: Range1
+    3300008: Range10
+    3300010: Range2
+    3300012: Range3
+    3300014: Range4
+    3300016: Range5
+    3300018: Range6
+    3300020: Range7
+    3300022: Range8
+    3300024: Range9
+    4300000: Position
+    4300002: Gyro_Range
+    4300004: Range0
+    4300006: Range1
+    4300008: Range2
+    4300010: Range3
+    4300012: Range4
+    4300014: Range5
+    4300016: Range6
+    4300018: Range7
+    4300020: Range8
+    4300022: Range9
+    4300024: Range10
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001
+    second: {fileID: 2100000, guid: fb25ab43021543a428d6bfd3acea6767, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plate
+    second: {fileID: 2100000, guid: b666fd1b3772f0941bc72612783aed63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Range0
+    second: {fileID: 2100000, guid: 2967923040c886849a5b6d23c27747cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Range1
+    second: {fileID: 2100000, guid: b18a01d518876a543963043fa06841ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Range10
+    second: {fileID: 2100000, guid: 00153017fef334b4db88b464db9b324b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Range2
+    second: {fileID: 2100000, guid: d860939b74525ac4abc00be06f986846, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Range3
+    second: {fileID: 2100000, guid: f08ad1e0e3f402143b8df45b323b1feb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Range4
+    second: {fileID: 2100000, guid: 51cb223a5cec1ff44a49a1dda5dbcc8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Range5
+    second: {fileID: 2100000, guid: 41cbdeb731e8bf34faeaa8b191798c68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Range6
+    second: {fileID: 2100000, guid: 975222d3ba75f274f83a5cf171ae225e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Range7
+    second: {fileID: 2100000, guid: 618c297b520064747a933b767bc6fb4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Range8
+    second: {fileID: 2100000, guid: 3d2fa8a4f53154141a295486e415ef3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: position
+    second: {fileID: 2100000, guid: adfeb17677b91784f92b427cda1308fb, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
