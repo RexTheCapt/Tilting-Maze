@@ -25,7 +25,9 @@ GameObject:
   - component: {fileID: 54313073564753350}
   - component: {fileID: 114232538802578830}
   - component: {fileID: 114499785348594812}
-  - component: {fileID: 114795635178459238}
+  - component: {fileID: 114499420816591070}
+  - component: {fileID: 114669506219444156}
+  - component: {fileID: 114980296807872336}
   - component: {fileID: 82273208611929106}
   m_Layer: 0
   m_Name: Player
@@ -56,7 +58,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -72,7 +73,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0154accca1288b644b394c435587b72d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NoMoveAudioClip: {fileID: 8300000, guid: fb9e6a643e1303542bdb00900656d6c5, type: 3}
+  fc: {fileID: 0}
   DeathAudioClip: {fileID: 8300000, guid: d914045c1cbff184fb4715c523527597, type: 3}
   CameraGameObject: {fileID: 0}
   DataHoldGameObject: {fileID: 0}
@@ -203,6 +203,18 @@ MonoBehaviour:
   moveModifier: 1
   deadZone: 0.025
   readyToMove: 0
+--- !u!114 &114499420816591070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1314483431616536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5996bdc3a1293c94fb4f8f8579a0b985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  run: 0
 --- !u!114 &114499785348594812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -216,7 +228,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerCamera: {fileID: 0}
   OffsetVector3: {x: 0, y: 10, z: 0}
---- !u!114 &114795635178459238
+--- !u!114 &114669506219444156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1314483431616536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae48cd0e82d77b843a169f4c1c41e9d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114980296807872336
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

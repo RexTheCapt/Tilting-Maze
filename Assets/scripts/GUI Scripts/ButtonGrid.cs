@@ -20,14 +20,19 @@ public class ButtonGrid : MonoBehaviour
     [Serializable]
     private class DebugVariables
     {
+        [Header("Controller")]
+        public bool PrintNameChange = false;
         public bool PrintNames = false;
+        [Header("Button")]
+        public bool PrintRegister = false;
     }
 
     public bool isController = false; // Used to identify as the controller to place the buttons
     [Header("The controller object")] public GameObject Controller; // The the controller object to control the buttons
     [SerializeField] private gridPosition grid = new gridPosition();
-    public float PlacementAccuracy = 1f;
     [SerializeField] DebugVariables debugVariables = new DebugVariables();
+    public bool SetPlacement = false;
+    public bool controllerReplaceAll = false;
 
     private void Start()
     {
@@ -44,10 +49,12 @@ public class ButtonGrid : MonoBehaviour
             switch (Controller.GetComponent<ButtonGrid>().Register(gameObject))
             {
                 case 0:
-                    Debug.Log("Registration to controller failed");
+                    if(debugVariables.PrintRegister)
+                        Debug.Log("Registration to controller failed");
                     break;
                 case 1:
-                    Debug.Log("Registration to controller success");
+                    if(debugVariables.PrintRegister)
+                        Debug.Log("Registration to controller success");
                     break;
                 case 2:
                     break;
@@ -69,28 +76,19 @@ public class ButtonGrid : MonoBehaviour
             // Go thru all the objects in the list
             foreach (GameObject g in ButtonList)
             {
-                int vx = (gt.screenWidth(20) * x);
-                int vy = (gt.screenHeight(20) * y) + Screen.height;
-
                 if (g.name != "Level " + (g.GetComponent<LevelAccess>().levelTarget + 1))
                 {
                     g.name = "Level " + (g.GetComponent<LevelAccess>().levelTarget + 1);
                     g.GetComponentInChildren<Text>().text = "Level " + (g.GetComponent<LevelAccess>().levelTarget + 1);
-                    if(debugVariables.PrintNames)
+                    if(debugVariables.PrintNames && debugVariables.PrintNameChange)
                         Debug.Log("Name set to " + g.name);
-                    else
+                    else if (debugVariables.PrintNameChange)
                         Debug.Log("Name changed");
                 }
 
-                if (g.transform.position.x > vx + PlacementAccuracy ||
-                    g.transform.position.x < vx - PlacementAccuracy)
-                {
-                    g.transform.position = new Vector3(vx, vy);
-                    if(debugVariables.PrintNames)
-                        Debug.Log("Placed " + g.name);
-                    else
-                        Debug.Log("Placed button");
-                }
+                g.GetComponent<ButtonGrid>().grid.x = x;
+                g.GetComponent<ButtonGrid>().grid.y = y;
+                g.GetComponent<ButtonGrid>().SetPlacement = true;
 
                 x++;
 
@@ -99,6 +97,24 @@ public class ButtonGrid : MonoBehaviour
                     x = 0;
                     y++;
                 }
+            }
+        }
+        else if (SetPlacement)
+        {
+            Vector2 pos = new Vector2();
+            pos.x = ((grid.x * gt.screenWidth(20)) - gt.screenWidth(50));
+            pos.y = 0 - (grid.y * gt.screenHeight(20));
+            transform.localPosition = pos;
+
+            SetPlacement = false;
+        }
+
+        if (controllerReplaceAll)
+        {
+            foreach (GameObject g in ButtonList)
+            {
+                g.GetComponent<ButtonGrid>().SetPlacement = true;
+                controllerReplaceAll = false;
             }
         }
     }

@@ -9,6 +9,7 @@ public class LevelAccess : MonoBehaviour
     [SerializeField]
     private ColorBlock colorBlock;
     private LevelAccessController LAC;
+    private float tmr;
 
     public GameObject ControllerGameObject;
     public int levelTarget = 0;
@@ -20,21 +21,21 @@ public class LevelAccess : MonoBehaviour
 
     private void Update()
     {
-        LAC = ControllerGameObject.GetComponent<LevelAccessController>();
-
-        colorBlock.normalColor = LAC.ActiveColor;
-        colorBlock.disabledColor = LAC.InActiveColor;
-        colorBlock.highlightedColor = LAC.HighLightColor;
-        colorBlock.pressedColor = LAC.PressedColor;
-        colorBlock.colorMultiplier = LAC.colorMultiplier;
-        colorBlock.fadeDuration = LAC.fadeDuration;
-
-        GetComponent<Button>().colors = colorBlock;
-
         if (prefs.level >= levelTarget)
-            GetComponent<Button>().interactable = true;
-        else
-            GetComponent<Button>().interactable = false;
+        {
+            LAC = ControllerGameObject.GetComponent<LevelAccessController>();
+
+            colorBlock.normalColor = LAC.ActiveColor;
+            colorBlock.disabledColor = LAC.InActiveColor;
+            colorBlock.highlightedColor = LAC.HighLightColor;
+            colorBlock.pressedColor = LAC.PressedColor;
+            colorBlock.colorMultiplier = LAC.colorMultiplier;
+            colorBlock.fadeDuration = LAC.fadeDuration;
+
+            GetComponent<Button>().colors = colorBlock;
+
+            GetComponent<Button>().interactable = prefs.level >= levelTarget;
+        }
     }
 
     public void StartLevel()

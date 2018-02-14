@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,10 +8,17 @@ public class ButtonGenerator : MonoBehaviour
 {
     public GameObject ButtonGameObject;
     private int index;
+    [Serializable]
+    class DebugVariables
+    {
+        public bool PrintGenerate = false;
+    }
 
     public int dontGenerateAt = 2;
     public int nextLevel = 1;
     public int genExtra = 0;
+    [SerializeField]
+    DebugVariables debugVariables = new DebugVariables();
 
     private void Start()
     {
@@ -38,6 +46,7 @@ public class ButtonGenerator : MonoBehaviour
         nextLevel++;
         //g.transform.parent = gameObject.transform;
         g.transform.SetParent(gameObject.transform);
-        Debug.Log("Object " + g.name + " generated");
+        if(debugVariables.PrintGenerate)
+            Debug.Log("Object " + g.name + " generated");
     }
 }

@@ -1151,7 +1151,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 229.57315}
+  m_AnchoredPosition: {x: 0, y: 0.10217658}
   m_SizeDelta: {x: 0, y: 391}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1206150857
@@ -1171,9 +1171,12 @@ MonoBehaviour:
   grid:
     x: -1
     y: -1
-  PlacementAccuracy: 1
   debugVariables:
+    PrintNameChange: 0
     PrintNames: 0
+    PrintRegister: 0
+  SetPlacement: 0
+  controllerReplaceAll: 0
 --- !u!114 &1206150858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1205,7 +1208,9 @@ MonoBehaviour:
   ButtonGameObject: {fileID: 1731673423}
   dontGenerateAt: 0
   nextLevel: 1
-  genExtra: 200
+  genExtra: 0
+  debugVariables:
+    PrintGenerate: 0
 --- !u!1 &1683620588
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,7 +1287,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 114776315}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0
+  m_Size: 0.99914217
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1399,9 +1404,12 @@ MonoBehaviour:
   grid:
     x: -1
     y: -1
-  PlacementAccuracy: 1
   debugVariables:
+    PrintNameChange: 0
     PrintNames: 0
+    PrintRegister: 0
+  SetPlacement: 0
+  controllerReplaceAll: 0
 --- !u!114 &1731673427
 MonoBehaviour:
   m_ObjectHideFlags: 0
