@@ -13,6 +13,7 @@ public class movePlayer : MonoBehaviour
     private bool win = false;
     private Prefs prefs = new Prefs();
     private bool DeathAudio = false;
+    private DataHold dataHold;
     
     public AudioClip DeathAudioClip;
     public GameObject CameraGameObject;
@@ -27,6 +28,7 @@ public class movePlayer : MonoBehaviour
     {
         fc = CameraGameObject.GetComponent<FadeController>();
         rb = GetComponent<Rigidbody>();
+        dataHold = DataHoldGameObject.GetComponent<DataHold>();
     }
     
     void FixedUpdate()
@@ -74,7 +76,10 @@ public class movePlayer : MonoBehaviour
 
         if (acc.x < 0.1f && acc.x > 0f - 0.1f && !fc.inFade && !win)
             if (acc.y < 0.1f && acc.y > 0f - 0.1f)
+            {
                 readyToMove = true;
+                GetComponent<GuiTimer>().run = true;
+            }
     }
 
     private Vector3 GetInput()
@@ -125,8 +130,11 @@ public class movePlayer : MonoBehaviour
     {
         if (collider.gameObject.tag == "Goal")
         {
+            GetComponent<GuiTimer>().run = false;
+            dataHold.record = GetComponent<GuiTimer>().deltaTime;
             win = true;
             gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
             fc.BeginFade(1);
         }
     }

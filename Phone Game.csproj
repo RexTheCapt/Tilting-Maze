@@ -85,6 +85,7 @@
     <Compile Include="Assets\scripts\GUI Scripts\FPSCounter.cs" />
     <Compile Include="Assets\scripts\GUI Scripts\GUIResize.cs" />
     <Compile Include="Assets\scripts\GUI Scripts\GUIResizeText.cs" />
+    <Compile Include="Assets\scripts\GUI Scripts\GuiTimer.cs" />
     <Compile Include="Assets\scripts\GUI Scripts\GyroDisk.cs" />
     <Compile Include="Assets\scripts\GUI Scripts\GyroPosition.cs" />
     <Compile Include="Assets\scripts\GUI Scripts\LevelAccess\LevelAccess.cs" />

@@ -17,6 +17,16 @@ public class DebugMenuLevel : MonoBehaviour
     public bool SetValues = false;
     public bool ReloadLevel = false;
     public bool SetAndReload = false;
+    [Serializable]
+    class DeleteAllPlayerPrefs
+    {
+        public bool Confirm0 = false;
+        public bool Confirm1 = false;
+        public bool Confirm2 = false;
+        public bool Confirm3 = false;
+    }
+    [SerializeField]
+    DeleteAllPlayerPrefs DAP = new DeleteAllPlayerPrefs();
 
     private void Start()
     {
@@ -42,6 +52,18 @@ public class DebugMenuLevel : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             ReloadLevel = false;
         }
+
+        if (DAP.Confirm0 || DAP.Confirm1 || DAP.Confirm2 || DAP.Confirm3)
+        {
+            Debug.Log("Playerprefs is in danger!");
+            if (DAP.Confirm0 && DAP.Confirm1 && DAP.Confirm2 && DAP.Confirm3)
+            {
+                PlayerPrefs.DeleteAll();
+                DAP.Confirm0 = false;DAP.Confirm1 = false;
+                DAP.Confirm2 = false;DAP.Confirm3 = false;
+                Debug.Log("Playerprefs deleted");
+            }
+        }
     }
 
     public void MainMenuSetLevel(GameObject TextInputDebugGameObject)
@@ -53,7 +75,6 @@ public class DebugMenuLevel : MonoBehaviour
             int n = Convert.ToInt32(s);
             Level = n;
             p.level = n;
-            ReloadLevel = true;
         }
         catch
         {

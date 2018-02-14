@@ -13,5 +13,11 @@ namespace Assets.scripts.VS_Scripts
             get { return PlayerPrefs.GetInt("Level"); }
             set { PlayerPrefs.SetInt("Level", value); }
         }
+
+        public float GetPlayerLevel(string LevelName)
+        {return PlayerPrefs.GetFloat(LevelName);}
+
+        public void SetPlayerLevel(string LevelName, float value)
+        { PlayerPrefs.SetFloat(LevelName, value);}
     }
 }

@@ -24,7 +24,7 @@ public class SpeedMeter : MonoBehaviour
         style.alignment = TextAnchor.UpperLeft;
         style.fontSize = gt.intPercent(h, 5);
         style.normal.textColor = new Color(0.0f, 0.0f, 0.5f, 1.0f);
-        string text = string.Format("{0}",(playerSpeed * 100).ToString("0.0"));
+        string text = string.Format("Speed: {0}",(playerSpeed * 100).ToString("0.0"));
         GUI.Label(rect, text, style);
     }
 }

@@ -14,11 +14,11 @@ public class FPSCounter : MonoBehaviour
 
     void OnGUI()
     {
-        int w = Screen.width, h = Screen.height;
+        int h = Screen.height;
 
         GUIStyle style = new GUIStyle();
 
-        Rect rect = new Rect(0, 0, 0, 0);
+        Rect rect = new Rect(0, gt.intPercent(h, 0), 0, 0);
         style.alignment = TextAnchor.UpperLeft;
         style.fontSize = gt.intPercent(h, 5);
         style.normal.textColor = new Color(0.0f, 0.0f, 0.5f, 1.0f);
