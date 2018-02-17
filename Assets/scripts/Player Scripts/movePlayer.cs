@@ -8,6 +8,7 @@ public class movePlayer : MonoBehaviour
     private Rigidbody rb;
     private float speed = 10f;
     private Vector3 offset = new Vector3(0, 0, 1f);
+    [HideInInspector]
     public FadeController fc;
     private bool death;
     private bool win = false;
@@ -16,6 +17,7 @@ public class movePlayer : MonoBehaviour
     private DataHold dataHold;
 
     public AudioClip DeathAudioClip;
+    public AudioClip VictoryAudioClip;
     public GameObject CameraGameObject;
     public GameObject DataHoldGameObject;
     public Vector3 acc;
@@ -64,7 +66,7 @@ public class movePlayer : MonoBehaviour
         }
         else if (fc.alpha >= 1 && win)
         {
-            if(SceneManager.sceneCountInBuildSettings == SceneManager.GetActiveScene().buildIndex + 1)
+            if (SceneManager.sceneCountInBuildSettings == SceneManager.GetActiveScene().buildIndex + 1)
                 SceneManager.LoadScene(0);
             else
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -130,6 +132,8 @@ public class movePlayer : MonoBehaviour
     {
         if (collider.gameObject.tag == "Goal")
         {
+            GetComponent<AudioSource>().clip = VictoryAudioClip;
+            GetComponent<AudioSource>().Play();
             GetComponent<GuiTimer>().run = false;
             dataHold.record = GetComponent<GuiTimer>().deltaTime;
             win = true;
