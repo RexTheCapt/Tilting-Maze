@@ -341,7 +341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &321432227
 RectTransform:
   m_ObjectHideFlags: 0
@@ -461,6 +461,11 @@ MonoBehaviour:
   SetValues: 0
   ReloadLevel: 0
   SetAndReload: 0
+  DAP:
+    Confirm0: 0
+    Confirm1: 0
+    Confirm2: 0
+    Confirm3: 0
 --- !u!1 &395557636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,7 +1156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.10217658}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 391}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1206150857
@@ -1208,7 +1213,7 @@ MonoBehaviour:
   ButtonGameObject: {fileID: 1731673423}
   dontGenerateAt: 0
   nextLevel: 1
-  genExtra: 0
+  genExtra: 100
   debugVariables:
     PrintGenerate: 0
 --- !u!1 &1683620588
@@ -1287,7 +1292,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 114776315}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99914217
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1675,7 +1680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1902008967
 RectTransform:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class movePlayer : MonoBehaviour
     private Prefs prefs = new Prefs();
     private bool DeathAudio = false;
     private DataHold dataHold;
-    
+
     public AudioClip DeathAudioClip;
     public GameObject CameraGameObject;
     public GameObject DataHoldGameObject;
@@ -30,7 +30,7 @@ public class movePlayer : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         dataHold = DataHoldGameObject.GetComponent<DataHold>();
     }
-    
+
     void FixedUpdate()
     {
         acc = GetInput();

@@ -90,6 +90,12 @@ public class ButtonGrid : MonoBehaviour
                 g.GetComponent<ButtonGrid>().grid.y = y;
                 g.GetComponent<ButtonGrid>().SetPlacement = true;
 
+                Vector2 contentHeight = new Vector2();
+                RectTransform rt = gameObject.GetComponent<RectTransform>();
+                contentHeight.x = rt.rect.x;
+                contentHeight.y = (y + 1) * gt.screenHeight(20);
+                rt.sizeDelta = contentHeight;
+
                 x++;
 
                 if (x == 5)
