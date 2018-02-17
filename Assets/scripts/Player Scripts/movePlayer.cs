@@ -18,6 +18,7 @@ public class movePlayer : MonoBehaviour
 
     public AudioClip DeathAudioClip;
     public AudioClip VictoryAudioClip;
+    public AudioClip StartAudioClip;
     public GameObject CameraGameObject;
     public GameObject DataHoldGameObject;
     public Vector3 acc;
@@ -50,8 +51,7 @@ public class movePlayer : MonoBehaviour
         {
             if (!DeathAudio)
             {
-                gameObject.GetComponent<AudioSource>().clip = DeathAudioClip;
-                gameObject.GetComponent<AudioSource>().Play();
+                PlayAudio(DeathAudioClip);
                 DeathAudio = true;
             }
             // Fade out the level
@@ -76,9 +76,10 @@ public class movePlayer : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (acc.x < 0.1f && acc.x > 0f - 0.1f && !fc.inFade && !win)
+        if (acc.x < 0.1f && acc.x > 0f - 0.1f && !fc.inFade && !win && !readyToMove)
             if (acc.y < 0.1f && acc.y > 0f - 0.1f)
             {
+                PlayAudio(StartAudioClip);
                 readyToMove = true;
                 GetComponent<GuiTimer>().run = true;
             }
@@ -132,8 +133,7 @@ public class movePlayer : MonoBehaviour
     {
         if (collider.gameObject.tag == "Goal")
         {
-            GetComponent<AudioSource>().clip = VictoryAudioClip;
-            GetComponent<AudioSource>().Play();
+            PlayAudio(VictoryAudioClip);
             GetComponent<GuiTimer>().run = false;
             dataHold.record = GetComponent<GuiTimer>().deltaTime;
             win = true;
@@ -151,5 +151,11 @@ public class movePlayer : MonoBehaviour
             return f;
         else
             return 0f;
+    }
+
+    private void PlayAudio (AudioClip audioClip)
+    {
+        gameObject.GetComponent<AudioSource>().clip = audioClip;
+        gameObject.GetComponent<AudioSource>().Play();
     }
 }

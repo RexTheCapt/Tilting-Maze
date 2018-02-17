@@ -196,6 +196,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fc: {fileID: 0}
   DeathAudioClip: {fileID: 8300000, guid: d914045c1cbff184fb4715c523527597, type: 3}
+  VictoryAudioClip: {fileID: 8300000, guid: 004df943ccc067644bf29843ecfcde32, type: 3}
+  StartAudioClip: {fileID: 8300000, guid: 6eaba864b2dd8924ab1fe301f71309e3, type: 3}
   CameraGameObject: {fileID: 0}
   DataHoldGameObject: {fileID: 0}
   acc: {x: 0, y: 0, z: 0}
@@ -214,7 +216,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5996bdc3a1293c94fb4f8f8579a0b985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deltaTime: 0
   run: 0
+  DataHoldGameObject: {fileID: 0}
 --- !u!114 &114499785348594812
 MonoBehaviour:
   m_ObjectHideFlags: 1
