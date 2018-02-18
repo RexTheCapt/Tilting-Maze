@@ -2,6 +2,8 @@
 
 <p>This is an school project i chose todo. I am fairly new to coding so my work may be sloppy.</p>
 
+<h2>Android target versions</h2>
+
 <table>
     <tr>
         <th>Version</th>
