@@ -6,7 +6,6 @@ public class GyroPlayerDirection : MonoBehaviour
 {
 	private GameObject playerGameObject;
 	public GameObject dot;
-	public float multiplier = 1f;
 	public Vector2 offset = new Vector2();
 
 	void Start()
@@ -25,11 +24,23 @@ public class GyroPlayerDirection : MonoBehaviour
 
 	void Update()
 	{
-		if(playerGameObject != null)
-		{
-			Rigidbody rb = playerGameObject.GetComponent<Rigidbody>();
-			Vector2 v = new Vector2((rb.velocity.x * multiplier) + offset.x, (rb.velocity.z * multiplier) + offset.y);
-			transform.localPosition = v;
-		}
+		Rigidbody rb = playerGameObject.GetComponent<Rigidbody>();
+		Vector2 v = new Vector2((rb.velocity.x * 200), (rb.velocity.z * 200));
+
+		if(v.x > 100)
+			v.x = 100;
+		if(v.x < -100)
+			v.x = -100;
+		if(v.y > 100)
+			v.y = 100;
+		if(v.y < -100)
+			v.y = -100;
+
+		v.x += offset.x;
+		v.y += offset.y;
+
+		Debug.Log(v);
+
+		gameObject.transform.localPosition = v;
 	}
 }
