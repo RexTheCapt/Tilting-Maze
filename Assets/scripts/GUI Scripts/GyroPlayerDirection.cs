@@ -39,7 +39,7 @@ public class GyroPlayerDirection : MonoBehaviour
 		v.x += offset.x;
 		v.y += offset.y;
 
-		Debug.Log(v);
+		//Debug.Log(v);
 
 		gameObject.transform.localPosition = v;
 	}

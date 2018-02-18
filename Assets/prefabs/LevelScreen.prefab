@@ -139,7 +139,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dot: {fileID: 1794543194372536}
-  multiplier: 8
   offset: {x: -125, y: 125}
 --- !u!114 &114481385627006820
 MonoBehaviour:
@@ -202,6 +201,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerGameObject: {fileID: 0}
   positionModifier: 100
+  ActivePosition: {r: 0, g: 1, b: 0, a: 1}
+  InActivePosition: {r: 0, g: 0.516, b: 0, a: 1}
 --- !u!114 &114830588420084168
 MonoBehaviour:
   m_ObjectHideFlags: 1
