@@ -136,7 +136,7 @@ public class movePlayer : MonoBehaviour
             PlayAudio(VictoryAudioClip);
             GetComponent<GuiTimer>().run = false;
             float dt = GetComponent<GuiTimer>().deltaTime;
-            if(dt < dataHold.record)
+            if(dt < dataHold.record || dataHold.record == 0f)
                 dataHold.record = dt;
             win = true;
             gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
