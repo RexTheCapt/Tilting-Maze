@@ -1,5 +1,4 @@
 *.apk
-*.meta
 *.log
 Temp/*
 Library/*
