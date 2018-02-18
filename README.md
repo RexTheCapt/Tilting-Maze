@@ -1,7 +1,20 @@
 # TiltingMaze
 
-This is an school project i chose todo. I am fairly new to coding so my work may be sloppy.
+<p>This is an school project i chose todo. I am fairly new to coding so my work may be sloppy.</p>
 
-Minimum android version: 5.0 'Lollipop'
+<h2>Android target versions</h2>
 
-Buildt for android version: 7.0 'Nougat'
+<table>
+    <tr>
+        <th>Version</th>
+        <th>Target</th>
+    </tr>
+    <tr>
+        <td>7.0 'Nougat'</td>
+        <td>Target</td>
+    </tr>
+    <tr>
+        <td>5.0 'Lollipop'</td>
+        <td>Minimum</td>
+    </tr>
+</table>
