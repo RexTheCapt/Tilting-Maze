@@ -12,13 +12,13 @@ public class ButtonGrid : MonoBehaviour
     [HideInInspector]
     public List<GameObject> ButtonList = new List<GameObject>(); // A list of all buttons on the menu
     [Serializable]
-    private class gridPosition
+    private class gridPosition // The position a button should keep to
     {
         public int x = -1;
         public int y = -1;
     }
     [Serializable]
-    private class DebugVariables
+    private class DebugVariables // Debug variables
     {
         [Header("Controller")]
         public bool PrintNameChange = false;
@@ -76,6 +76,7 @@ public class ButtonGrid : MonoBehaviour
             // Go thru all the objects in the list
             foreach (GameObject g in ButtonList)
             {
+                // Rename the buttons for more cleaner debugging and listing
                 if (g.name != "Level " + (g.GetComponent<LevelAccess>().levelTarget + 1))
                 {
                     g.name = "Level " + (g.GetComponent<LevelAccess>().levelTarget + 1);
@@ -86,9 +87,17 @@ public class ButtonGrid : MonoBehaviour
                         Debug.Log("Name changed");
                 }
 
+                // Give button the coord and let it use them
                 g.GetComponent<ButtonGrid>().grid.x = x;
                 g.GetComponent<ButtonGrid>().grid.y = y;
                 g.GetComponent<ButtonGrid>().SetPlacement = true;
+
+                // Auto resizing the menu
+                Vector2 contentHeight = new Vector2();
+                RectTransform rt = gameObject.GetComponent<RectTransform>();
+                contentHeight.x = rt.rect.x;
+                contentHeight.y = (y + 1) * gt.screenHeight(20);
+                rt.sizeDelta = contentHeight;
 
                 x++;
 
@@ -101,14 +110,17 @@ public class ButtonGrid : MonoBehaviour
         }
         else if (SetPlacement)
         {
+            // If SetPlacement is true then move to that grid position
             Vector2 pos = new Vector2();
             pos.x = ((grid.x * gt.screenWidth(20)) - gt.screenWidth(50));
             pos.y = 0 - (grid.y * gt.screenHeight(20));
             transform.localPosition = pos;
 
+            // When done then disable the self positioning to reduce lag
             SetPlacement = false;
         }
 
+        // If the controller get this variable set to true then force all buttons to replace them self
         if (controllerReplaceAll)
         {
             foreach (GameObject g in ButtonList)
@@ -138,10 +150,12 @@ public class ButtonGrid : MonoBehaviour
         }
         catch
         {
+            // If the register failed
+            Debug.Log("Failed to register");
             return 0;
         }
 
-        // If failed return 0
+        // If the code somehow got to this point
         return 0;
     }
 }

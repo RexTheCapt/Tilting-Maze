@@ -8,14 +8,17 @@ public class movePlayer : MonoBehaviour
     private Rigidbody rb;
     private float speed = 10f;
     private Vector3 offset = new Vector3(0, 0, 1f);
+    [HideInInspector]
     public FadeController fc;
     private bool death;
     private bool win = false;
     private Prefs prefs = new Prefs();
     private bool DeathAudio = false;
     private DataHold dataHold;
-    
+
     public AudioClip DeathAudioClip;
+    public AudioClip VictoryAudioClip;
+    public AudioClip StartAudioClip;
     public GameObject CameraGameObject;
     public GameObject DataHoldGameObject;
     public Vector3 acc;
@@ -30,7 +33,7 @@ public class movePlayer : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         dataHold = DataHoldGameObject.GetComponent<DataHold>();
     }
-    
+
     void FixedUpdate()
     {
         acc = GetInput();
@@ -48,8 +51,7 @@ public class movePlayer : MonoBehaviour
         {
             if (!DeathAudio)
             {
-                gameObject.GetComponent<AudioSource>().clip = DeathAudioClip;
-                gameObject.GetComponent<AudioSource>().Play();
+                PlayAudio(DeathAudioClip);
                 DeathAudio = true;
             }
             // Fade out the level
@@ -64,7 +66,7 @@ public class movePlayer : MonoBehaviour
         }
         else if (fc.alpha >= 1 && win)
         {
-            if(SceneManager.sceneCountInBuildSettings == SceneManager.GetActiveScene().buildIndex + 1)
+            if (SceneManager.sceneCountInBuildSettings == SceneManager.GetActiveScene().buildIndex + 1)
                 SceneManager.LoadScene(0);
             else
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -74,9 +76,10 @@ public class movePlayer : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (acc.x < 0.1f && acc.x > 0f - 0.1f && !fc.inFade && !win)
+        if (acc.x < 0.1f && acc.x > 0f - 0.1f && !fc.inFade && !win && !readyToMove)
             if (acc.y < 0.1f && acc.y > 0f - 0.1f)
             {
+                PlayAudio(StartAudioClip);
                 readyToMove = true;
                 GetComponent<GuiTimer>().run = true;
             }
@@ -130,8 +133,11 @@ public class movePlayer : MonoBehaviour
     {
         if (collider.gameObject.tag == "Goal")
         {
+            PlayAudio(VictoryAudioClip);
             GetComponent<GuiTimer>().run = false;
-            dataHold.record = GetComponent<GuiTimer>().deltaTime;
+            float dt = GetComponent<GuiTimer>().deltaTime;
+            if(dt < dataHold.record || dataHold.record == 0f)
+                dataHold.record = dt;
             win = true;
             gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 
@@ -147,5 +153,11 @@ public class movePlayer : MonoBehaviour
             return f;
         else
             return 0f;
+    }
+
+    private void PlayAudio (AudioClip audioClip)
+    {
+        gameObject.GetComponent<AudioSource>().clip = audioClip;
+        gameObject.GetComponent<AudioSource>().Play();
     }
 }

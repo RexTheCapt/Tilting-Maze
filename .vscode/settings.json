@@ -52,5 +52,7 @@
         "ProjectSettings/":true,
         "temp/":true,
         "Temp/":true
-    }
+    },
+    "files.autoSave": "off",
+    "files.eol": "\r\n"
 }

@@ -16,6 +16,10 @@ public class DataHold : MonoBehaviour
         set { p.SetPlayerLevel(SceneManager.GetActiveScene().name, value); }
     }
     public bool resetTime = false;
+    [Space(10)]
+    [Header("Change the record time")]
+    public float recordTimeEdit;
+    public bool recordTimeEditBool;
 
     private void Start()
     {
@@ -30,6 +34,12 @@ public class DataHold : MonoBehaviour
         {
             record = 0f;
             resetTime = false;
+        }
+
+        if(recordTimeEditBool)
+        {
+            record = recordTimeEdit;
+            recordTimeEditBool = false;
         }
     }
 }
