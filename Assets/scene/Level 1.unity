@@ -698,6 +698,8 @@ MonoBehaviour:
   Level: 2
   recordTime: 0
   resetTime: 0
+  recordTimeEdit: 0
+  recordTimeEditBool: 0
 --- !u!4 &2013198992
 Transform:
   m_ObjectHideFlags: 0
@@ -922,7 +924,7 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114830588420084168, guid: 8c087421d6daf9c4d8611b5dbd39054b,
+    - target: {fileID: 114167866070861852, guid: 8c087421d6daf9c4d8611b5dbd39054b,
         type: 2}
       propertyPath: PlayerGameObject
       value: 
@@ -932,7 +934,7 @@ Prefab:
       propertyPath: PlayerGameObject
       value: 
       objectReference: {fileID: 150725716}
-    - target: {fileID: 114167866070861852, guid: 8c087421d6daf9c4d8611b5dbd39054b,
+    - target: {fileID: 114830588420084168, guid: 8c087421d6daf9c4d8611b5dbd39054b,
         type: 2}
       propertyPath: PlayerGameObject
       value: 
