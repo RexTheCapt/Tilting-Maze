@@ -204,6 +204,10 @@ MonoBehaviour:
   deathAlpha: 2
   moveModifier: 1
   deadZone: 0.025
+  RigidbodyVariables:
+    slowestSpeed: 0.2
+    highDrag: 1
+    lowDrag: 0
   readyToMove: 0
 --- !u!114 &114499420816591070
 MonoBehaviour:
