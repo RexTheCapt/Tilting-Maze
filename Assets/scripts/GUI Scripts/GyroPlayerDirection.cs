@@ -23,24 +23,30 @@ public class GyroPlayerDirection : MonoBehaviour
 	}
 
 	void Update()
-	{
-		Rigidbody rb = playerGameObject.GetComponent<Rigidbody>();
-		Vector2 v = new Vector2((rb.velocity.x * 200), (rb.velocity.z * 200));
+    {
+        if (playerGameObject != null)
+        {
+            if (playerGameObject.GetComponent<Rigidbody>())
+            {
+                Rigidbody rb = playerGameObject.GetComponent<Rigidbody>();
+                Vector2 v = new Vector2((rb.velocity.x * 200), (rb.velocity.z * 200));
 
-		if(v.x > 100)
-			v.x = 100;
-		if(v.x < -100)
-			v.x = -100;
-		if(v.y > 100)
-			v.y = 100;
-		if(v.y < -100)
-			v.y = -100;
+                if (v.x > 100)
+                    v.x = 100;
+                if (v.x < -100)
+                    v.x = -100;
+                if (v.y > 100)
+                    v.y = 100;
+                if (v.y < -100)
+                    v.y = -100;
 
-		v.x += offset.x;
-		v.y += offset.y;
+                v.x += offset.x;
+                v.y += offset.y;
 
-		//Debug.Log(v);
+                //Debug.Log(v);
 
-		gameObject.transform.localPosition = v;
-	}
+                gameObject.transform.localPosition = v;
+            }
+        }
+    }
 }
