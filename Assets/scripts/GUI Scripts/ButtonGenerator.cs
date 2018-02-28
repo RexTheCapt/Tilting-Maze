@@ -23,7 +23,7 @@ public class ButtonGenerator : MonoBehaviour
 
     private void Start()
     {
-        index = SceneManager.sceneCountInBuildSettings - 2;
+        index = SceneManager.sceneCountInBuildSettings - 3;
 
         for (int i = dontGenerateAt; i < index; i++)
         {
