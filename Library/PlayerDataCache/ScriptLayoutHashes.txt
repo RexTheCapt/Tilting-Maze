@@ -147,7 +147,9 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
-400bccb5ce0c3f189c3f463277806902 Assembly-CSharp.dll:.movePlayer
+098e51bbd0144321ea26e832de55201c Assembly-CSharp.dll:.movePlayer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.FPSCounter
-f5af75989c863894c776962a392a15bb Assembly-CSharp.dll:.GyroPosition
+9c6acfac0f3b0bb22c2507552ef41e83 Assembly-CSharp.dll:.GyroPosition
 4a798bf2924918429b1223f281b5930a Assembly-CSharp.dll:.SpeedMeter
+0d6b9651919f057fdf4fd154a0b6e26a Assembly-CSharp.dll:.Key
+c20bab47b7a38dc5bf14af3955c4a2f9 Assembly-CSharp.dll:.Lock

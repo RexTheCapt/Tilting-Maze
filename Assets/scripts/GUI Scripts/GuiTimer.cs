@@ -29,8 +29,8 @@ public class GuiTimer : MonoBehaviour
         style.alignment = TextAnchor.UpperLeft;
         style.fontSize = gt.intPercent(h, 5);
         style.normal.textColor = new Color(0.0f, 0.0f, 0.5f, 1.0f);
-        string text = string.Format("Time: {0:00}:{1:00.00} ({2:00}:{3:00.00})",
-            Mathf.Floor(deltaTime / 60), deltaTime % 60, Mathf.Floor(record / 60), record % 60);
+        string text = string.Format("Time L{4}: {0:00}:{1:00.00} ({2:00}:{3:00.00})",
+            Mathf.Floor(deltaTime / 60), deltaTime % 60, Mathf.Floor(record / 60), record % 60, DataHoldGameObject.GetComponent<DataHold>().Level + 1);
         GUI.Label(rect, text, style);
     }
 }
