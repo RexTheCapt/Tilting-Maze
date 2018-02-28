@@ -20,9 +20,19 @@ public class DataHold : MonoBehaviour
     [Header("Change the record time")]
     public float recordTimeEdit;
     public bool recordTimeEditBool;
+    public bool autoLevel = true;
 
     private void Start()
     {
+        Scene scene = SceneManager.GetActiveScene();
+
+        string[] s = scene.name.Split(' ');
+
+        if(autoLevel)
+        {
+            Level = Convert.ToInt32(s[1]) - 1;
+        }
+
         if (Level == 0)
             throw new IndexOutOfRangeException();
     }

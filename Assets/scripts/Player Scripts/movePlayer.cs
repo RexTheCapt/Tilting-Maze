@@ -15,6 +15,14 @@ public class movePlayer : MonoBehaviour
     private Prefs prefs = new Prefs();
     private bool DeathAudio = false;
     private DataHold dataHold;
+    private SpeedMeter speedMeter;
+    [Serializable]
+    public class RBVariables
+    {
+        public float slowestSpeed = 1f;
+        public float highDrag = 0.1f;
+        public float lowDrag = 0f;
+    }
 
     public AudioClip DeathAudioClip;
     public AudioClip VictoryAudioClip;
@@ -25,6 +33,8 @@ public class movePlayer : MonoBehaviour
     public float deathAlpha = 2f;
     public float moveModifier = 1f;
     public float deadZone = 0.0f;
+    [SerializeField]
+    public RBVariables RigidbodyVariables = new RBVariables();
     public bool readyToMove;
 
     void Start()
@@ -32,6 +42,7 @@ public class movePlayer : MonoBehaviour
         fc = CameraGameObject.GetComponent<FadeController>();
         rb = GetComponent<Rigidbody>();
         dataHold = DataHoldGameObject.GetComponent<DataHold>();
+        speedMeter = GetComponent<SpeedMeter>();
     }
 
     void FixedUpdate()
@@ -83,6 +94,15 @@ public class movePlayer : MonoBehaviour
                 readyToMove = true;
                 GetComponent<GuiTimer>().run = true;
             }
+
+        if(speedMeter.playerSpeed * 100 <= RigidbodyVariables.slowestSpeed)
+        {
+            rb.drag = RigidbodyVariables.highDrag;
+        }
+        else
+        {
+            rb.drag = RigidbodyVariables.lowDrag;
+        }
     }
 
     private Vector3 GetInput()

@@ -81,4 +81,14 @@ public class DebugMenuLevel : MonoBehaviour
             TextInputDebugGameObject.GetComponent<InputField>().text = "Invalid Only number";
         }
     }
+
+    public void DebugMenuDeleteAllPrefs()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        if(scene.name == "DebugScene")
+        {
+            PlayerPrefs.DeleteAll();
+            SceneManager.LoadScene("Menu");
+        }
+    }
 }

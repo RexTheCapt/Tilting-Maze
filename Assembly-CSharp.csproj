@@ -70,6 +70,8 @@
      <Compile Include="Assets\scripts\Player Scripts\KeepCameraOnPlayer.cs" />
      <Compile Include="Assets\scripts\Player Scripts\movePlayer.cs" />
      <Compile Include="Assets\scripts\Scene Scripts\Level\DataHold.cs" />
+     <Compile Include="Assets\scripts\Scene Scripts\Level\Key.cs" />
+     <Compile Include="Assets\scripts\Scene Scripts\Level\Lock.cs" />
      <Compile Include="Assets\scripts\VS Scripts\GuiTools.cs" />
      <Compile Include="Assets\scripts\VS Scripts\prefs.cs" />
  <Reference Include="UnityEngine.UI">
