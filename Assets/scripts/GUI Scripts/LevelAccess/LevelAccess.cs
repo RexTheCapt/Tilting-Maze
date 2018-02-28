@@ -40,7 +40,9 @@ public class LevelAccess : MonoBehaviour
 
     public void StartLevel()
     {
-        if (prefs.level >= levelTarget)
+        if(levelTarget == -1)
+            SceneManager.LoadScene("DebugScene");
+        else if (prefs.level >= levelTarget)
         {
             string s = "Level " + (levelTarget + 1);
             SceneManager.LoadScene(s);

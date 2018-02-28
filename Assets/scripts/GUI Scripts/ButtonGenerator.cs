@@ -17,6 +17,7 @@ public class ButtonGenerator : MonoBehaviour
     public int dontGenerateAt = 2;
     public int nextLevel = 1;
     public int genExtra = 0;
+    public bool DebugButton = false;
     [SerializeField]
     DebugVariables debugVariables = new DebugVariables();
 
@@ -28,6 +29,9 @@ public class ButtonGenerator : MonoBehaviour
         {
             Generate();
         }
+
+        if(DebugButton)
+            Generate(true);
     }
 
     private void Update()
@@ -39,12 +43,19 @@ public class ButtonGenerator : MonoBehaviour
         }
     }
 
-    private void Generate()
+    private void Generate(bool deb = false)
     {
         GameObject g = Instantiate(ButtonGameObject);
-        g.GetComponent<LevelAccess>().levelTarget = nextLevel;
-        nextLevel++;
-        //g.transform.parent = gameObject.transform;
+        if (!deb)
+        {
+            g.GetComponent<LevelAccess>().levelTarget = nextLevel;
+            nextLevel++;
+        }
+        else
+        {
+            g.GetComponent<LevelAccess>().levelTarget = -1;
+            g.name = "Debug Button";
+        }
         g.transform.SetParent(gameObject.transform);
         if(debugVariables.PrintGenerate)
             Debug.Log("Object " + g.name + " generated");

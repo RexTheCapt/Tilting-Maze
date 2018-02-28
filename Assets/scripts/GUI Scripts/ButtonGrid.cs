@@ -77,7 +77,7 @@ public class ButtonGrid : MonoBehaviour
             foreach (GameObject g in ButtonList)
             {
                 // Rename the buttons for more cleaner debugging and listing
-                if (g.name != "Level " + (g.GetComponent<LevelAccess>().levelTarget + 1))
+                if (g.name != "Level " + (g.GetComponent<LevelAccess>().levelTarget + 1) && g.name != "Debug Button")
                 {
                     g.name = "Level " + (g.GetComponent<LevelAccess>().levelTarget + 1);
                     g.GetComponentInChildren<Text>().text = "Level " + (g.GetComponent<LevelAccess>().levelTarget + 1);
@@ -85,6 +85,10 @@ public class ButtonGrid : MonoBehaviour
                         Debug.Log("Name set to " + g.name);
                     else if (debugVariables.PrintNameChange)
                         Debug.Log("Name changed");
+                }
+                else if (g.name == "Debug Button")
+                {
+                    g.GetComponentInChildren<Text>().text = "Debug";
                 }
 
                 // Give button the coord and let it use them
