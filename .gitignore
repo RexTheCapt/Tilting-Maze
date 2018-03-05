@@ -1,4 +1,8 @@
 *.log
 Temp/*
-Library/*
 build.apk
+Library/*Cache*
+*.info
+Library/metadata/*
+Library/LastBuild.buildreport
+Library/LastSceneManagerSetup.txt
