@@ -153,3 +153,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.FPSCounter
 9c6acfac0f3b0bb22c2507552ef41e83 Assembly-CSharp.dll:.GyroPosition
 4a798bf2924918429b1223f281b5930a Assembly-CSharp.dll:.SpeedMeter
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DisableScreenTimer
